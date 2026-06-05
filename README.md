@@ -85,7 +85,7 @@ This project implements a simple 8-bit microprocessor using Logisim.
 | Opcode | Operand |
 |--------|---------|
 | 7..4   | 3..0    |
-|--------|---------|
+
 
 
 - Upper 4 bits → Operation Code
