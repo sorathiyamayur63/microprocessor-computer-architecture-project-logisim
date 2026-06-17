@@ -125,6 +125,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(480,250)" to="(530,250)"/>
     <wire from="(90,700)" to="(90,710)"/>
     <wire from="(360,330)" to="(360,340)"/>
+    <wire from="(50,620)" to="(100,620)"/>
     <wire from="(100,620)" to="(210,620)"/>
     <wire from="(780,520)" to="(820,520)"/>
     <wire from="(870,410)" to="(910,410)"/>
@@ -191,7 +192,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(650,350)" to="(660,350)"/>
     <wire from="(350,400)" to="(420,400)"/>
     <wire from="(180,240)" to="(180,310)"/>
-    <wire from="(40,620)" to="(100,620)"/>
     <wire from="(420,330)" to="(470,330)"/>
     <wire from="(720,390)" to="(910,390)"/>
     <wire from="(850,430)" to="(910,430)"/>
@@ -232,17 +232,37 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(650,360)" to="(660,360)"/>
     <wire from="(460,420)" to="(460,670)"/>
     <wire from="(600,210)" to="(600,390)"/>
+    <comp lib="0" loc="(490,330)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="center"/>
+      <a name="bit0" val="3"/>
+      <a name="bit1" val="2"/>
+      <a name="bit2" val="1"/>
+      <a name="bit3" val="0"/>
+    </comp>
+    <comp lib="0" loc="(90,710)" name="Clock">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="4" loc="(110,550)" name="Counter"/>
+    <comp lib="5" loc="(970,390)" name="TTY"/>
     <comp lib="0" loc="(490,420)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
       <a name="appear" val="center"/>
     </comp>
-    <comp lib="0" loc="(40,620)" name="Pin">
+    <comp lib="4" loc="(430,240)" name="ROM">
+      <a name="addrWidth" val="4"/>
+      <a name="contents">addr/data: 4 8
+0 1 3 4 b 10 90 50
+30 70 b0
+</a>
+    </comp>
+    <comp lib="0" loc="(50,620)" name="Pin">
       <a name="tristate" val="false"/>
     </comp>
-    <comp lib="11" loc="(870,540)" name="main"/>
-    <comp lib="4" loc="(110,550)" name="Counter"/>
     <comp lib="0" loc="(330,380)" name="Splitter">
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
@@ -256,59 +276,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp lib="5" loc="(970,390)" name="TTY"/>
     <comp lib="2" loc="(570,340)" name="Multiplexer">
       <a name="width" val="4"/>
-    </comp>
-    <comp lib="6" loc="(655,429)" name="Text">
-      <a name="text" val="REGISTER FILE"/>
-    </comp>
-    <comp lib="0" loc="(230,240)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
-      <a name="appear" val="center"/>
-      <a name="bit0" val="3"/>
-      <a name="bit1" val="2"/>
-      <a name="bit2" val="1"/>
-      <a name="bit3" val="0"/>
-    </comp>
-    <comp lib="6" loc="(353,181)" name="Text">
-      <a name="text" val="B"/>
-    </comp>
-    <comp lib="0" loc="(490,330)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
-      <a name="appear" val="center"/>
-      <a name="bit0" val="3"/>
-      <a name="bit1" val="2"/>
-      <a name="bit2" val="1"/>
-      <a name="bit3" val="0"/>
-    </comp>
-    <comp lib="12" loc="(690,330)" name="main"/>
-    <comp lib="0" loc="(630,360)" name="Splitter">
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
-      <a name="appear" val="center"/>
-    </comp>
-    <comp lib="6" loc="(217,440)" name="Text">
-      <a name="text" val="A"/>
-    </comp>
-    <comp lib="4" loc="(430,240)" name="ROM">
-      <a name="addrWidth" val="4"/>
-      <a name="contents">addr/data: 4 8
-0 1 3 4 b 10 90 50
-30 70 b0
-</a>
-    </comp>
-    <comp lib="0" loc="(460,240)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-      <a name="appear" val="center"/>
-    </comp>
-    <comp lib="6" loc="(880,501)" name="Text">
-      <a name="text" val="ALU"/>
     </comp>
     <comp lib="4" loc="(290,380)" name="ROM">
       <a name="contents">addr/data: 8 8
@@ -335,14 +304,45 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
 20 a0 40 13 30 10 2a 30
 </a>
     </comp>
-    <comp lib="0" loc="(90,710)" name="Clock">
-      <a name="facing" val="north"/>
+    <comp lib="0" loc="(230,240)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="center"/>
+      <a name="bit0" val="3"/>
+      <a name="bit1" val="2"/>
+      <a name="bit2" val="1"/>
+      <a name="bit3" val="0"/>
     </comp>
+    <comp lib="0" loc="(460,240)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="11" loc="(870,540)" name="main"/>
+    <comp lib="12" loc="(690,330)" name="main"/>
     <comp lib="0" loc="(930,400)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="7"/>
       <a name="incoming" val="7"/>
       <a name="appear" val="center"/>
+    </comp>
+    <comp lib="6" loc="(353,181)" name="Text">
+      <a name="text" val="B"/>
+    </comp>
+    <comp lib="6" loc="(217,440)" name="Text">
+      <a name="text" val="A"/>
+    </comp>
+    <comp lib="0" loc="(630,360)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="6" loc="(880,501)" name="Text">
+      <a name="text" val="ALU"/>
+    </comp>
+    <comp lib="6" loc="(655,429)" name="Text">
+      <a name="text" val="REGISTER FILE"/>
     </comp>
   </circuit>
 </project>
